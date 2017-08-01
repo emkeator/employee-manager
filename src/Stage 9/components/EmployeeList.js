@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 
 class EmployeeList extends Component {
+  
   render() {
     return (
       <div>
         <ul className="listContainer">
-          { 
-            // Map over this.props.employees
+          {
+            
+            this.props.employees.map((employee) => {
+              console.log(employee);
+              return (<li className="listText" key={employee.name} onClick={() => this.props.selectEmployee(employee)}>{employee.id}</li>);
+            })
+          
+          
+          
           }
         </ul>
       </div>
